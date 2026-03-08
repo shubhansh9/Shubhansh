@@ -1102,6 +1102,24 @@ body.cursor-hover #cursor-dot {
 
 .mobile-menu.open { right: 0; }
 
+.menu-close {
+  position: absolute;
+  top: 1.2rem; right: 1.2rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.menu-close:hover { background: rgba(255,255,255,0.12); transform: rotate(90deg); }
+
+
+
 .mobile-menu ul {
   list-style: none;
   display: flex;
@@ -1756,13 +1774,52 @@ body.cursor-hover #cursor-dot {
   .hamburger { display: flex; }
   .nav-links  { display: none; }
 
+  /* 2. Fix section headers touching border */
+  section, .hero, .about-section, .experience-section,
+  .cp-section, .projects-section, .resume-section, .hire-section {
+    padding-left: 1.2rem !important;
+    padding-right: 1.2rem !important;
+  }
+
+  h2 { font-size: clamp(1.6rem, 7vw, 2.5rem) !important; }
+
+  .section-header h2 { font-size: clamp(1.5rem, 6vw, 2.2rem) !important; }
+
   .hero {
     flex-direction: column;
     padding-top: 8rem;
     text-align: center;
   }
   .hero-tags, .hero-cta { justify-content: center; }
+
+  /* 5. Center "And I am a" typing text on mobile */
+  .hero-subtitle { text-align: center; justify-content: center; }
+
   .about-inner { grid-template-columns: 1fr; gap: 3rem; }
   .resume-highlights { grid-template-columns: 1fr; }
   .cp-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+
+  /* 1. Fix loader text size on mobile */
+  .loader-name { gap: 3px; }
+  .loader-slot { height: 1.6rem !important; overflow: hidden; }
+  .loader-slot-inner span { font-size: 1.6rem !important; height: 2.2rem !important; }
+}
+
+/* 3. Hide cursor dot on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  #cursor-dot { display: none !important; }
+  body { cursor: auto !important; }
+}
+
+/* 6. Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--accent);
+  z-index: 99999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(45,212,191,0.5);
 }
