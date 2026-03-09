@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Shubhansh — Web Developer, Minecraft Plugin Developer & Competitive Programmer from India."/>
+  <title>Shubhansh | Portfolio</title>
+  <link rel="icon" type="image/png" href="images/favicon_circle.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+  <!-- CUSTOM ARROW CURSOR -->
+  <div id="cursor-arrow">
+    <svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.0995 11.0797L3.72518 1.13204C2.28687 0.258253 0.478228 1.44326 0.704999 3.11083L3.28667 22.0953C3.58333 24.2768 7.33319 24.6415 8.3792 22.7043C9.5038 20.6215 10.8639 18.7382 12.43 17.7122C13.996 16.6861 16.2658 16.1911 18.6244 15.9918C20.8181 15.8063 21.9811 12.2227 20.0995 11.0797Z"
+        fill="#2dd4bf" stroke="rgba(10,10,10,0.5)" stroke-width="2"/>
+    </svg>
+  </div>
+  <!-- CLICK SPARK CANVAS -->
+  <canvas id="spark-canvas"></canvas>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-name" id="loaderName"></div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"><div class="loader-bar-fill" id="loaderBarFill"></div></div>
+      </div>
+      <p class="loader-sub">loading portfolio...</p>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">SHUBHANSH</a>
+    <ul class="nav-links">
+      <li><a href="#home"       class="nav-link active"><span class="top">Home</span><span class="bottom">Home</span></a></li>
+      <li><a href="#about"      class="nav-link"><span class="top">About</span><span class="bottom">About</span></a></li>
+      <li><a href="#skills"     class="nav-link"><span class="top">Skills</span><span class="bottom">Skills</span></a></li>
+      <li><a href="#experience" class="nav-link"><span class="top">Journey</span><span class="bottom">Journey</span></a></li>
+      <li><a href="#cp-stats"   class="nav-link"><span class="top">CP Stats</span><span class="bottom">CP Stats</span></a></li>
+      <li><a href="#projects"   class="nav-link"><span class="top">Projects</span><span class="bottom">Projects</span></a></li>
+      <li><a href="#contact"    class="nav-link"><span class="top">Contact</span><span class="bottom">Contact</span></a></li>
+    </ul>
+    <a href="resume.pdf" download class="nav-resume-btn">Resume ↓</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="menu-close" id="menuClose">✕</button>
+    <ul>
+      <li><a href="#home"       class="mob-link">Home</a></li>
+      <li><a href="#about"      class="mob-link">About</a></li>
+      <li><a href="#skills"     class="mob-link">Skills</a></li>
+      <li><a href="#experience" class="mob-link">Journey</a></li>
+      <li><a href="#cp-stats"   class="mob-link">CP Stats</a></li>
+      <li><a href="#projects"   class="mob-link">Projects</a></li>
+      <li><a href="#contact"    class="mob-link">Contact</a></li>
+      <li><a href="resume.pdf" download class="mob-link mob-resume">Download CV</a></li>
+    </ul>
+  </div>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section id="home" class="hero">
+
+    <!-- LEFT: flashcard -->
+    <div class="hero-left reveal-left">
+      <div class="flashcard" id="flashcard">
+
+        <!-- Pills — outside inner so they DON'T tilt -->
+        <div class="float-pill pill-react">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 13.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm7.284-7.116C18.593 4.953 16.5 4.5 12 4.5S5.407 4.953 4.716 6.384c-.691 1.43-.216 3.58.716 5.616-.932 2.036-1.407 4.186-.716 5.616C5.407 19.047 7.5 19.5 12 19.5s6.593-.453 7.284-1.884c.691-1.43.216-3.58-.716-5.616.932-2.036 1.407-4.186.716-5.616z"/></svg>
+          React
+        </div>
+        <div class="float-pill pill-html">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
+          HTML
+        </div>
+        <div class="float-pill pill-css">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg>
+          CSS
+        </div>
+        <div class="float-pill pill-js">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.755-1.125 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+          JS
+        </div>
+        <div class="float-pill pill-cpp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.109-7.11a7.133 7.133 0 0 1 6.156 3.553l-3.076 1.78a3.567 3.567 0 0 0-3.08-1.78A3.555 3.555 0 0 0 8.444 12 3.555 3.555 0 0 0 12 15.555a3.57 3.57 0 0 0 3.08-1.778l3.078 1.78A7.135 7.135 0 0 1 12 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"/></svg>
+          C++
+        </div>
+        <div class="float-pill pill-node">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.998 24c-.321 0-.641-.084-.922-.247l-2.936-1.737c-.438-.245-.224-.332-.08-.383.585-.203.703-.25 1.328-.603.065-.037.151-.023.218.017l2.256 1.339c.082.045.198.045.272 0l8.795-5.076c.082-.047.134-.141.134-.238V6.921c0-.099-.053-.19-.137-.242l-8.791-5.072c-.081-.047-.189-.047-.271 0L3.075 6.68c-.085.05-.139.145-.139.243v10.148c0 .097.055.189.137.233l2.409 1.392c1.307.654 2.108-.116 2.108-.891V7.787c0-.142.114-.253.256-.253h1.115c.139 0 .255.112.255.253v10.018c0 1.745-.95 2.745-2.604 2.745-.508 0-.909 0-2.026-.551L2.28 18.675a1.85 1.85 0 0 1-.919-1.604V6.921c0-.658.351-1.273.919-1.604l8.796-5.082c.554-.315 1.291-.315 1.841 0l8.796 5.082c.567.331.919.946.919 1.604v10.15c0 .658-.353 1.273-.919 1.604l-8.796 5.076c-.28.164-.599.247-.919.247z"/></svg>
+          Node.js
+        </div>
+
+        <!-- Inner — only this part tilts on hover -->
+        <div class="flashcard-inner" id="flashcard-inner">
+          <div class="card-circle"></div>
+          <img class="card-photo" src="images/profile2.png" alt="Shubhansh"/>
+          <div class="flashcard-badge">
+            <span class="badge-pulse"></span>Open to Work
+          </div>
+          <div class="flashcard-info">
+            <h3>Shubhansh</h3>
+            <p>Developer · India</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: text content -->
+    <div class="hero-right reveal-right">
+      <div class="hero-avail">
+        <span class="avail-dot"></span>Available for freelance
+      </div>
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Shubhansh</h1>
+      <h2 class="hero-role">Web Developer &amp; Designer</h2>
+      <p class="hero-subtitle">
+        And I am a
+        <span class="typing-wrapper">
+          <span id="typed-text"></span><span class="cursor">|</span>
+        </span>
+      </p>
+      <div class="hero-tags">
+        <span>C++</span><span>JavaScript</span><span>React</span>
+        <span>Node.js</span><span>Java</span><span>Spigot</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">
+          View Work
+          <div class="icon">
+            <svg height="24" width="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"/></svg>
+          </div>
+        </a>
+        <a href="#contact" class="btn-outline"><span class="text">Hire Me</span></a>
+      </div>
+      <!-- Social icons row -->
+      <div class="hero-socials">
+        <a href="mailto:shubhanshs90@gmail.com" class="soc-chip" aria-label="Email">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a href="https://github.com/shubhansh9" target="_blank" rel="noopener" class="soc-chip" aria-label="GitHub">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="soc-chip" aria-label="LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       01 ABOUT ME
+  ══════════════════════════════════ -->
+  <section id="about" class="about-section">
+    <div class="sec-eyebrow scroll-reveal">
+      <span class="ey-num">01</span>
+      <span class="ey-txt">About Me</span>
+      <div class="ey-line"></div>
+    </div>
+    <div class="about-inner">
+      <div class="about-text scroll-reveal">
+        <h2 data-sr-heading>Who Am I?</h2>
+        <p data-sr-text>I'm Shubhansh — a 16-year-old developer from India who refuses to wait for the "right age" to build real things. Currently in 11th grade at VSM Inter College, I'm already freelancing, solving competitive programming problems, and shipping projects that matter.</p>
+        <p data-sr-text>I build modern websites and custom Minecraft plugins. My goal: master the craft, contribute to open source, and build products that make a difference. Every line of code is a step forward.</p>
+        <div class="about-stats">
+          <div class="a-stat"><span class="a-num">3+</span><span class="a-lbl">Projects</span></div>
+          <div class="a-stat"><span class="a-num">6+</span><span class="a-lbl">Languages</span></div>
+          <div class="a-stat"><span class="a-num">1yr+</span><span class="a-lbl">Freelancing</span></div>
+        </div>
+      </div>
+      <div class="about-skills">
+        <div class="skill-bar scroll-reveal"><div class="skill-bar-header"><span>C++ / DSA</span><span class="skill-pct">80%</span></div><div class="bar"><div style="width:80%"></div></div></div>
+        <div class="skill-bar scroll-reveal"><div class="skill-bar-header"><span>JavaScript / React</span><span class="skill-pct">75%</span></div><div class="bar"><div style="width:75%"></div></div></div>
+        <div class="skill-bar scroll-reveal"><div class="skill-bar-header"><span>HTML / CSS</span><span class="skill-pct">85%</span></div><div class="bar"><div style="width:85%"></div></div></div>
+        <div class="skill-bar scroll-reveal"><div class="skill-bar-header"><span>Node.js / Java</span><span class="skill-pct">65%</span></div><div class="bar"><div style="width:65%"></div></div></div>
+        <div class="skill-bar scroll-reveal"><div class="skill-bar-header"><span>Python / Spigot</span><span class="skill-pct">70%</span></div><div class="bar"><div style="width:70%"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       02 TOOLS I WORK WITH
+  ══════════════════════════════════ -->
+  <section id="skills" class="skills-section">
+    <div class="sec-eyebrow scroll-reveal">
+      <span class="ey-num">02</span>
+      <span class="ey-txt">Tech Stack</span>
+      <div class="ey-line"></div>
+    </div>
+    <h2 class="skills-title scroll-reveal" data-sr-heading>Tools I Work With</h2>
+    <div class="skills-grid">
+      <div class="sk-card scroll-reveal" style="--delay:0s"><div class="sk-icon"><img src="images/logos/html.png" alt="HTML"></div><span>HTML</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.05s"><div class="sk-icon"><img src="images/logos/css.png" alt="CSS"></div><span>CSS</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.1s"><div class="sk-icon"><img src="images/logos/javascript.png" alt="JavaScript"></div><span>JavaScript</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.15s"><div class="sk-icon"><img src="images/logos/react.png" alt="React"></div><span>React</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.2s"><div class="sk-icon"><img src="images/logos/nodejs.png" alt="Node.js"></div><span>Node.js</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.25s"><div class="sk-icon"><img src="images/logos/cpp.png" alt="C++"></div><span>C++</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.3s"><div class="sk-icon"><img src="images/logos/python.png" alt="Python"></div><span>Python</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.35s"><div class="sk-icon"><img src="images/logos/java.png" alt="Java"></div><span>Java</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.4s"><div class="sk-icon"><img src="images/logos/git.png" alt="Git"></div><span>Git</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.45s"><div class="sk-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></div><span>GitHub</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.5s"><div class="sk-icon"><img src="images/logos/mongodb.png" alt="MongoDB"></div><span>MongoDB</span></div>
+      <div class="sk-card scroll-reveal" style="--delay:0.55s"><div class="sk-icon"><img src="images/logos/Java.png" alt="Spigot API"></div><span>Spigot API</span></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       03 MY EXPERIENCE
+  ══════════════════════════════════ -->
+  <section id="experience" class="experience-section">
+    <div class="experience-inner">
+      <div class="sec-eyebrow scroll-reveal">
+        <span class="ey-num">03</span>
+        <span class="ey-txt">Journey</span>
+        <div class="ey-line"></div>
+      </div>
+      <h2 class="scroll-reveal" data-sr-heading>My Experience</h2>
+      <div class="exp-timeline">
+
+        <div class="exp-item" style="--delay:0.05s">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <div class="exp-card-top">
+              <div><p class="exp-role">Freelance Web Developer</p><p class="exp-company">Self-employed · Remote</p></div>
+              <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.4rem">
+                <span class="exp-date">2024 – Present</span>
+                <span class="exp-badge-active">Currently Working</span>
+              </div>
+            </div>
+            <ul class="exp-bullets">
+              <li data-sr-text>Building and delivering web projects for clients using React and Node.js.</li>
+              <li data-sr-text>Handling everything from design to deployment independently.</li>
+              <li data-sr-text>Growing a portfolio of real-world client work while still in school.</li>
+            </ul>
+            <div class="exp-tech-tags"><span>React</span><span>Node.js</span><span>HTML/CSS</span><span>JavaScript</span></div>
+          </div>
+        </div>
+
+        <div class="exp-item" style="--delay:0.15s">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <div class="exp-card-top">
+              <div><p class="exp-role">Minecraft Plugin Developer</p><p class="exp-company">Self-learning · Plugin Dev</p></div>
+              <span class="exp-date">2023 – Present</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Building custom gameplay plugins for Minecraft multiplayer servers.</li>
+              <li>Working with Java and the Spigot API to create event-driven systems.</li>
+              <li data-sr-text>Learning server-side architecture and backend Java development.</li>
+            </ul>
+            <div class="exp-tech-tags"><span>Java</span><span>Spigot API</span><span>Maven</span></div>
+          </div>
+        </div>
+
+        <div class="exp-item" style="--delay:0.25s">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <div class="exp-card-top">
+              <div><p class="exp-role">Competitive Programmer</p><p class="exp-company">Self-learning · CP Journey</p></div>
+              <span class="exp-date">2023 – Present</span>
+            </div>
+            <ul class="exp-bullets">
+              <li data-sr-text>Actively learning DSA through competitive programming problems.</li>
+              <li data-sr-text>Practicing graphs, DP, trees, and binary search in C++.</li>
+              <li>Building a strong foundation to compete on Codeforces.</li>
+            </ul>
+            <div class="exp-tech-tags"><span>C++</span><span>DSA</span><span>Graphs</span><span>DP</span></div>
+          </div>
+        </div>
+
+        <div class="exp-item" style="--delay:0.35s">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <div class="exp-card-top">
+              <div><p class="exp-role">Class 11 — Science (CS)</p><p class="exp-company">VSM Inter College</p></div>
+              <span class="exp-date">2024 – Present</span>
+            </div>
+            <ul class="exp-bullets">
+              <li data-sr-text>Studying Computer Science alongside Physics, Chemistry, and Mathematics.</li>
+              <li data-sr-text>Applying classroom concepts directly to real projects and CP problems.</li>
+              <li>Plans to pursue B.Tech in Computer Science after 12th.</li>
+            </ul>
+            <div class="exp-tech-tags"><span>CS</span><span>Maths</span><span>Problem Solving</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       04 MY CP JOURNEY
+  ══════════════════════════════════ -->
+  <section id="cp-stats" class="cp-section">
+    <div class="sec-eyebrow scroll-reveal">
+      <span class="ey-num">04</span>
+      <span class="ey-txt">Competitive Programming</span>
+      <div class="ey-line"></div>
+    </div>
+    <h2 class="scroll-reveal" data-sr-heading>My CP Journey</h2>
+    <div class="cp-grid">
+
+      <div class="cp-card scroll-reveal" style="--delay:0s">
+        <div class="cp-card-top">
+          <div class="cp-platform-icon cf-icon">CF</div>
+          <div><p class="cp-platform-name">Codeforces</p><p class="cp-handle">@shubhansh</p></div>
+          <div class="cp-badge cf-badge">Newbie</div>
+        </div>
+        <div class="cp-rating-row">
+          <div class="cp-stat"><span class="cp-stat-val" data-target="1600">0</span><span class="cp-stat-label">Max Rating</span></div>
+          <div class="cp-stat"><span class="cp-stat-val" data-target="320">0</span><span class="cp-stat-label">Problems</span></div>
+          <div class="cp-stat"><span class="cp-stat-val" data-target="45">0</span><span class="cp-stat-label">Contests</span></div>
+        </div>
+        <div class="cp-bar-wrap">
+          <div class="cp-bar"><div class="cp-bar-fill cf-fill" style="width:0%" data-width="64%"></div></div>
+          <span class="cp-bar-label">1600 / 2500</span>
+        </div>
+        <a href="#" class="cp-link">Profile coming soon →</a>
+      </div>
+
+      <div class="cp-card scroll-reveal" style="--delay:0.12s">
+        <div class="cp-card-top">
+          <div class="cp-platform-icon lc-icon">LC</div>
+          <div><p class="cp-platform-name">LeetCode</p><p class="cp-handle">@shubhansh</p></div>
+          <div class="cp-badge lc-badge">Beginner</div>
+        </div>
+        <div class="cp-rating-row">
+          <div class="cp-stat"><span class="cp-stat-val" data-target="500">0</span><span class="cp-stat-label">Problems</span></div>
+          <div class="cp-stat"><span class="cp-stat-val" data-target="1850">0</span><span class="cp-stat-label">Rating</span></div>
+          <div class="cp-stat"><span class="cp-stat-val" data-target="30">0</span><span class="cp-stat-label">Contests</span></div>
+        </div>
+        <div class="cp-bar-wrap">
+          <div class="cp-bar lc-bar">
+            <div class="cp-bar-fill lc-easy" style="width:0%" data-width="40%"></div>
+            <div class="cp-bar-fill lc-med"  style="width:0%" data-width="35%"></div>
+            <div class="cp-bar-fill lc-hard" style="width:0%" data-width="15%"></div>
+          </div>
+          <span class="cp-bar-label">Easy · Med · Hard</span>
+        </div>
+        <a href="#" class="cp-link">Profile coming soon →</a>
+      </div>
+
+      <div class="cp-card scroll-reveal" style="--delay:0.24s">
+        <div class="cp-card-top">
+          <div class="cp-platform-icon streak-icon">🔥</div>
+          <div><p class="cp-platform-name">Overall</p><p class="cp-handle">All Platforms</p></div>
+        </div>
+        <div class="cp-rating-row">
+          <div class="cp-stat"><span class="cp-stat-val" data-target="820">0</span><span class="cp-stat-label">Total Solved</span></div>
+          <div class="cp-stat"><span class="cp-stat-val" data-target="75">0</span><span class="cp-stat-label">Contests</span></div>
+          <div class="cp-stat"><span class="cp-stat-val" data-target="21">0</span><span class="cp-stat-label">Day Streak</span></div>
+        </div>
+        <div class="cp-tags"><span>Graphs</span><span>DP</span><span>Trees</span><span>Binary Search</span><span>Greedy</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       05 PROJECTS
+  ══════════════════════════════════ -->
+  <section id="projects" class="projects-section">
+    <div class="sec-eyebrow scroll-reveal">
+      <span class="ey-num">05</span>
+      <span class="ey-txt">Portfolio</span>
+      <div class="ey-line"></div>
+    </div>
+    <h2 class="scroll-reveal" data-sr-heading>Things I've Built</h2>
+
+    <div class="proj-filter scroll-reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web Apps</button>
+      <button class="filter-btn" data-filter="plugin">Plugins</button>
+    </div>
+
+    <div class="projects-grid" id="projGrid">
+
+      <div class="project-card scroll-reveal" data-cat="web" data-title="Todo App" data-desc="A clean task manager with add, complete, delete and filter by All / Active / Done. All data persists with localStorage — nothing lost on refresh." data-tech="HTML,CSS,JavaScript" data-demo="projects/todo.html" data-source="#">
+        <div class="project-browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">todo-app — shubhansh</div></div>
+        <div class="project-image">
+          <img src="images/project1.png" alt="Todo App" loading="lazy"/>
+          <div class="project-overlay">
+            <p class="project-popup-text">A clean task manager with add, complete, delete and filter. Saves to localStorage.</p>
+            <div class="project-overlay-links"><a href="projects/todo.html" class="project-link">Live Demo</a><a href="https://github.com/shubhansh9/Shubhansh/blob/main/projects/todo.html" class="project-link secondary">GitHub</a></div>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>Todo App</h3>
+          <p class="project-desc" data-sr-text>Minimal task manager with All/Active/Done filters. Nothing lost on refresh.</p>
+          <div class="project-tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+          <div class="project-footer">
+            <a href="https://github.com/shubhansh9/Shubhansh/blob/main/projects/todo.html" class="project-footer-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Source Code</a>
+            <button class="project-footer-link modal-btn">Details ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card scroll-reveal" style="--delay:0.1s" data-cat="web" data-title="Budget Tracker" data-desc="Track income and expenses with live balance, category tags and localStorage persistence. Uses ₹ Indian Rupee currency." data-tech="HTML,CSS,JavaScript" data-demo="projects/budget.html" data-source="#">
+        <div class="project-browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">budget-tracker — shubhansh</div></div>
+        <div class="project-image">
+          <img src="images/budget.png" alt="Budget Tracker" loading="lazy"/>
+          <div class="project-overlay">
+            <p class="project-popup-text">Track income and expenses with live balance. localStorage persistence in ₹.</p>
+            <div class="project-overlay-links"><a href="projects/budget.html" class="project-link">Live Demo</a><a href="https://github.com/shubhansh9/Shubhansh/blob/main/projects/budget.html" class="project-link secondary">GitHub</a></div>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>Budget Tracker</h3>
+          <p class="project-desc" data-sr-text>Real-time income and expense tracker. Live balance, category tags, ₹ currency.</p>
+          <div class="project-tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+          <div class="project-footer">
+            <a href="https://github.com/shubhansh9/Shubhansh/blob/main/projects/budget.html" class="project-footer-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Source Code</a>
+            <button class="project-footer-link modal-btn">Details ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card scroll-reveal" style="--delay:0.2s" data-cat="web" data-title="CS Quiz App" data-desc="Test your CS knowledge across 4 categories — DSA, Web Dev, C++ and CS Basics. 10 randomized questions per category with live scoring and accuracy." data-tech="HTML,CSS,JavaScript" data-demo="projects/quiz.html" data-source="#">
+        <div class="project-browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">cs-quiz — shubhansh</div></div>
+        <div class="project-image">
+          <img src="images/quiz.png" alt="CS Quiz" loading="lazy"/>
+          <div class="project-overlay">
+            <p class="project-popup-text">CS quiz — DSA, Web Dev, C++ and CS Basics. 10 questions each with live scoring.</p>
+            <div class="project-overlay-links"><a href="projects/quiz.html" class="project-link">Live Demo</a><a href="https://github.com/shubhansh9/Shubhansh/blob/main/projects/quiz.html" class="project-link secondary">GitHub</a></div>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>CS Quiz App</h3>
+          <p class="project-desc" data-sr-text>DSA, Web Dev, C++ and CS Basics. Randomized questions, live scoring, result screen.</p>
+          <div class="project-tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+          <div class="project-footer">
+            <a href="https://github.com/shubhansh9/Shubhansh/blob/main/projects/quiz.html" class="project-footer-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Source Code</a>
+            <button class="project-footer-link modal-btn">Details ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card scroll-reveal" style="--delay:0.3s" data-cat="plugin" data-title="Minecraft Plugin" data-desc="A custom Minecraft server plugin built with Java and the Spigot API. Adds custom gameplay mechanics, commands and events for multiplayer servers." data-tech="Java,Spigot API,Maven" data-demo="#" data-source="#">
+        <div class="project-browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">mc-plugin — shubhansh</div></div>
+        <div class="project-image" style="background:linear-gradient(135deg,#1a2a0a,#2d4a12);display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;">
+          <div style="text-align:center;color:#a8c040"><svg width="56" height="56" viewBox="0 0 64 64" fill="none"><rect x="8" y="8" width="48" height="48" rx="6" fill="#3a5a14"/><rect x="16" y="16" width="32" height="32" rx="4" fill="#4a7a1a"/><rect x="24" y="24" width="8" height="8" fill="#8aaa2a"/><rect x="32" y="24" width="8" height="8" fill="#5a8a1e"/><rect x="24" y="32" width="8" height="8" fill="#5a8a1e"/><rect x="32" y="32" width="8" height="8" fill="#8aaa2a"/></svg><p style="font-family:monospace;font-size:0.8rem;margin-top:0.5rem;color:#d4e888">Minecraft Plugin</p></div>
+          <div class="project-overlay">
+            <p class="project-popup-text">Custom gameplay plugin for Minecraft servers. Java + Spigot API.</p>
+            <div class="project-overlay-links"><a href="#" class="project-link secondary">GitHub</a></div>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>Minecraft Plugin</h3>
+          <p class="project-desc" data-sr-text>Custom gameplay plugin for multiplayer servers. Java + Spigot API event-driven.</p>
+          <div class="project-tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Spigot API</span><span class="tech-tag">Maven</span></div>
+          <div class="project-footer">
+            <a href="#" class="project-footer-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Source Code</a>
+            <button class="project-footer-link modal-btn">Details ↗</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECT MODAL -->
+  <div id="projModal" class="proj-modal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modalClose">✕</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <div class="modal-tech" id="modalTech"></div>
+      <div class="modal-action-btns">
+        <a id="modalDemo" href="#" class="btn-primary" target="_blank" rel="noopener">Live Demo <div class="icon"><svg height="20" width="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"/></svg></div></a>
+        <a id="modalSrc" href="#" class="btn-outline" target="_blank" rel="noopener"><span class="text">GitHub</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       06 CONTACT
+  ══════════════════════════════════ -->
+  <section id="contact" class="contact-section">
+    <div class="sec-eyebrow scroll-reveal">
+      <span class="ey-num">06</span>
+      <span class="ey-txt">Contact</span>
+      <div class="ey-line"></div>
+    </div>
+    <div class="contact-inner scroll-reveal">
+      <h2 data-sr-heading style="line-height:1.3">Let's Build Something<br/>Together</h2>
+      <p>Open to freelance projects, collaborations, and learning opportunities. My inbox is always open.</p>
+      <a href="mailto:shubhanshs90@gmail.com" class="btn-primary large-btn">
+        Say Hello
+        <div class="icon">
+          <svg height="24" width="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"/></svg>
+        </div>
+      </a>
+      <div class="contact-chips">
+        <a href="mailto:shubhanshs90@gmail.com" class="c-chip">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a href="https://github.com/shubhansh9" target="_blank" rel="noopener" class="c-chip">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="c-chip">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">SHUBHANSH</a>
+        <p>Building things one commit at a time.</p>
+        <div class="footer-soc">
+          <a href="mailto:shubhanshs90@gmail.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Journey</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <a href="projects/todo.html">Todo App</a>
+        <a href="projects/budget.html">Budget Tracker</a>
+        <a href="projects/quiz.html">CS Quiz</a>
+        <a href="resume.pdf" download>Resume</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Shubhansh — Built with ambition &amp; caffeine</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

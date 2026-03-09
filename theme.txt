@@ -1,0 +1,11 @@
+:root {
+  --bg:      #0a0a0a;
+  --bg2:     #111111;
+  --bg3:     #181818;
+  --white:   #f0eeea;
+  --muted:   #b0b0b0;
+  --accent:  #2dd4bf;
+  --accent2: #99f6e4;
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+  --ease: cubic-bezier(0.16
